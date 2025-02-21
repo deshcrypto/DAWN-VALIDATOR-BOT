@@ -1,15 +1,11 @@
-<b>STEP FOR INSTALL (LINUX)<b>
+<br>=== === === === === === === === ===
+<br><b>+ STEP FOR INSTALL (LINUX) +<b>
+<br>=== === === === === === === === ===
 
-<b>MAKE FOLDER & MOVE TO FOLDER :<b>
-<br><textarea id="text-copy" class="form-copy">mkdir DAWN-VALIDATOR && cd DAWN-VALIDATOR</textarea>
-<button class="btn btn-copy btn-circle">
-    COPY
-</button>
-
-<br><b>CLONE REPOSITORY :<b>
+<br><b>+ CLONE REPOSITORY :+<b>
 <br>git clone https://codeberg.org/afif0902/DAWN-VALIDATOR-BOT.git
 
-<br><b>INSTALL DEPENDENCIES :<b>
+<br><b>+ INSTALL DEPENDENCIES : +<b>
 <br><textarea id="text-copy" class="form-copy">npm init -y</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
@@ -18,9 +14,14 @@
 <button class="btn btn-copy btn-circle">
     COPY
 </button>
+<br><textarea id="text-copy" class="form-copy">npm install chalk@4.1.2</textarea>
+<button class="btn btn-copy btn-circle">
+    COPY
+</button>
+
 <br>ADD TOKEN : add your token to "tokens.txt" or using "nano tokens.txt"
 
-<br><b>RUN BOT :<b>
+<br><b>+ RUN BOT : +<b>
 <br><textarea id="text-copy" class="form-copy">screen -S DAWN-BOT</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
@@ -30,4 +31,6 @@
     COPY
 </button>
 
-<br><b>NOTE :<b> Support single and multi account, you can adjust connection mode and proxy in ".env" file or using "nano .env"
+<br><b>+ NOTE : +<b>
+<br>- Support single and multi account, you can adjust connection mode and proxy in ".env" file or using "nano .env"
+<br>- If any problem for copy button please use manual copy
