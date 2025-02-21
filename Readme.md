@@ -2,6 +2,12 @@
 <br><b>+ STEP FOR INSTALL (LINUX) +<b>
 <br>=== === === === === === === === ===
 
+<br><b>+ MAKE SCREEN :+<b>
+<br><textarea id="text-copy" class="form-copy">screen -S DAWN-BOT</textarea>
+<button class="btn btn-copy btn-circle">
+    COPY
+</button>
+
 <br><b>+ CLONE REPOSITORY :+<b>
 <br>git clone https://codeberg.org/afif0902/DAWN-VALIDATOR-BOT.git
 
