@@ -1,6 +1,6 @@
 <b>STEP FOR INSTALL (LINUX)<b>
 
-<pre><b>MAKE FOLDER & MOVE TO FOLDER :<b>
+<b>MAKE FOLDER & MOVE TO FOLDER :<b>
 <br><textarea id="text-copy" class="form-copy">mkdir DAWN-VALIDATOR && cd DAWN-VALIDATOR</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
