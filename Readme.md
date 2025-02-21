@@ -28,10 +28,6 @@
 <br>ADD TOKEN : add your token to "tokens.txt" or using "nano tokens.txt"
 
 <br><b>+ RUN BOT : +<b>
-<br><textarea id="text-copy" class="form-copy">screen -S DAWN-BOT</textarea>
-<button class="btn btn-copy btn-circle">
-    COPY
-</button>
 <br><textarea id="text-copy" class="form-copy">node dawn.js</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
