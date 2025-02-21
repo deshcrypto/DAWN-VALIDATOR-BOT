@@ -10,12 +10,12 @@
 
 <br><b>+ CLONE REPOSITORY :+<b>
 <br>git clone https://codeberg.org/afif0902/DAWN-VALIDATOR-BOT.git
-
-<br><b>+ INSTALL DEPENDENCIES : +<b>
-<br><textarea id="text-copy" class="form-copy">npm init -y</textarea>
+<br><textarea id="text-copy" class="form-copy">cd DAWN-VALIDATOR-BOT</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
 </button>
+
+<br><b>+ INSTALL DEPENDENCIES : +<b>
 <br><textarea id="text-copy" class="form-copy">npm install chalk node-fetch@2 fs</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
