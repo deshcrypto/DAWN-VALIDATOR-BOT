@@ -1,12 +1,12 @@
 <b>STEP FOR INSTALL (LINUX)<b>
 
-<br><b>GIT CLONE REPOSITORY<b> => Copy (HTTPS) URL from right side
-
-<br><b>MAKE FOLDER & MOVE TO FOLDER :<b>
+<pre><b>MAKE FOLDER & MOVE TO FOLDER :<b>
 <br><textarea id="text-copy" class="form-copy">mkdir DAWN-VALIDATOR && cd DAWN-VALIDATOR</textarea>
 <button class="btn btn-copy btn-circle">
     COPY
 </button>
+
+<br><b>GIT CLONE REPOSITORY<b> => Copy (HTTPS) URL from right side
 
 <br><b>INSTALL DEPENDENCIES :<b>
 <br><textarea id="text-copy" class="form-copy">npm init -y</textarea>
