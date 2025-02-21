@@ -13,7 +13,7 @@ function printHeader() {
     console.clear();
     console.log(chalk.blueBright('=========================================='));
     console.log(chalk.greenBright('   AUTO RUN 24 HOURS DAWN VALIDATOR'));
-    console.log(chalk.yellowBright('         BOT By SAYA LURUS'));
+    console.log(chalk.yellowBright('        POWERED BY SAYA LURUS'));
     console.log(chalk.blueBright('=========================================='));
 }
 
