@@ -26,6 +26,8 @@
 </button>
 
 <br>ADD TOKEN : add your token to "tokens.txt" or using "nano tokens.txt"
+<br>ADD PROXY : add your proxy to proxy.txt or nano proxy.txt" => each line for one account
+<br> Ex : http://user:pass@host:port
 
 <br><b>+ RUN BOT : +<b>
 <br><textarea id="text-copy" class="form-copy">node dawn.js</textarea>
