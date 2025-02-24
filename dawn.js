@@ -6,7 +6,7 @@ const API_GET_POINT = 'https://www.aeropres.in/api/atom/v1/userreferral/getpoint
 const API_KEEP_ALIVE = 'https://www.aeropres.in/chromeapi/dawn/v1/userreward/keepalive';
 const MAX_RETRIES = 3;
 const DELAY_BETWEEN_ACCOUNTS = 4000;
-const DELAY_BETWEEN_LOOPS = 10000;
+const DELAY_BETWEEN_LOOPS = 60000;
 
 // Fungsi mencetak header yang tetap di atas
 function printHeader() {
