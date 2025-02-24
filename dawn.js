@@ -5,8 +5,8 @@ const fetch = require('node-fetch');
 const API_GET_POINT = 'https://www.aeropres.in/api/atom/v1/userreferral/getpoint';
 const API_KEEP_ALIVE = 'https://www.aeropres.in/chromeapi/dawn/v1/userreward/keepalive';
 const MAX_RETRIES = 3;
-const DELAY_BETWEEN_ACCOUNTS = 3000;
-const DELAY_BETWEEN_LOOPS = 60000;
+const DELAY_BETWEEN_ACCOUNTS = 4000;
+const DELAY_BETWEEN_LOOPS = 10000;
 
 // Fungsi mencetak header yang tetap di atas
 function printHeader() {
@@ -27,11 +27,21 @@ function getTokens() {
         : [];
 }
 
+// Fungsi membaca proxy dari file
+function getProxies() {
+    return fs.existsSync('proxy.txt')
+        ? fs.readFileSync('proxy.txt', 'utf-8')
+            .split(/\r?\n/)
+            .map(proxy => proxy.trim())
+            .filter(Boolean)
+        : [];
+}
+
 // Fungsi untuk retry dengan batas percobaan
-async function fetchWithRetry(url, token) {
+async function fetchWithRetry(url, options) {
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const response = await fetch(url, { headers: { 'Authorization': `Bearer ${token}` } });
+            const response = await fetch(url, options);
             if (response.ok) {
                 return await response.json(); // Hentikan loop jika sukses
             }
@@ -47,14 +57,19 @@ async function fetchWithRetry(url, token) {
 async function getPoint(token, appid) {
     if (!appid) return null;
     const url = `${API_GET_POINT}?appid=${appid}`;
-    return await fetchWithRetry(url, token);
+    return await fetchWithRetry(url, { headers: { 'Authorization': `Bearer ${token}` } });
 }
 
 // Fungsi keep-alive
 async function keepAlive(token, appid) {
     if (!appid) return 'N/A';
     const url = `${API_KEEP_ALIVE}?appid=${appid}`;
-    return await fetchWithRetry(url, token) ? '? OK' : '? Failed';
+    const response = await fetchWithRetry(url, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+    });
+    return response && response.success ? '? OK' : '? Failed';
 }
 
 // Fungsi utama bot
@@ -63,6 +78,10 @@ async function startBot() {
     console.log(chalk.cyan('[AUTO RUN] Bot is starting...'));
 
     const tokens = getTokens();
+    const proxies = getProxies();
+
+    console.log(chalk.yellow(`[INFO] Total Akun: ${tokens.length}, Total Proxy: ${proxies.length}`));
+    
     if (tokens.length === 0) {
         console.error(chalk.red('[ERROR] Tidak ada token dalam file tokens.txt!'));
         return;
@@ -70,10 +89,12 @@ async function startBot() {
 
     while (true) {
         printHeader(); // Pastikan header tetap di atas
-        console.log(chalk.yellow(`\n[AUTO RUN] Memproses ${tokens.length} akun...`));
+        console.log(chalk.yellow(`\n[AUTO RUN] Memproses ${tokens.length} akun dengan ${proxies.length} proxy...`));
 
         for (let i = 0; i < tokens.length; i++) {
+            const proxy = proxies.length > 0 ? proxies[i % proxies.length] : 'Direct Connection';
             console.log(chalk.gray(`[INFO] Processing token ${i + 1}/${tokens.length}...`));
+            console.log(chalk.gray(`[INFO] Menggunakan Proxy: ${proxy}`));
             console.log(chalk.gray('[INFO] Memuat data . . .'));
             
             const appid = 'VALID_APPID';
