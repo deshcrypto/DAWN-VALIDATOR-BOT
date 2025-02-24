@@ -1,0 +1,2 @@
+#proxy list
+http://user:pass@host:port
