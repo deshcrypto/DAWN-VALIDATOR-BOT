@@ -7,7 +7,7 @@ const API_GET_POINT = 'https://www.aeropres.in/api/atom/v1/userreferral/getpoint
 const API_KEEP_ALIVE = 'https://www.aeropres.in/chromeapi/dawn/v1/userreward/keepalive';
 const MAX_RETRIES = 3;
 const DELAY_BETWEEN_ACCOUNTS = 4000;
-const DELAY_BETWEEN_LOOPS = 10000;
+const DELAY_BETWEEN_LOOPS = 60000;
 
 function printHeader() {
     console.clear();
@@ -137,7 +137,7 @@ async function startBot() {
             await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_ACCOUNTS));
         }
 
-        console.log(chalk.magenta('[AUTO RUN] Menunggu 10 detik sebelum loop berikutnya...'));
+        console.log(chalk.magenta('[AUTO RUN] Menunggu 60 detik sebelum loop berikutnya...'));
         await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_LOOPS));
     }
 }
